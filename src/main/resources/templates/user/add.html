@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join the amazing spa today!</title>
+</head>
+<body>
+
+<form method = 'post' th:action="@{/user}">
+<label>UserName
+    <input type="text" name="userName" class="user" th:value="${username}">
+</label>
+<label>
+    Email
+    <input type="email" name="email"  class="user" th:value="${email}">
+</label>
+<label>
+    Password
+    <input type="password" name="password"  class="user">
+</label>
+<label>
+    Verify Password
+    <input type="password" name="verify"  class="user">
+</label>
+<p th:text="${error}"></p>
+
+<input type = 'submit' value = 'Join now!'>
+</form>
+</body>
+</html>
