@@ -6,25 +6,37 @@
 </head>
 <body>
 
-<form method = 'post' th:action="@{/user}">
-<label>UserName
-    <input type="text" name="userName" class="user" th:value="${username}">
-</label>
-<label>
-    Email
-    <input type="email" name="email"  class="user" th:value="${email}">
-</label>
-<label>
-    Password
-    <input type="password" name="password"  class="user">
-</label>
-<label>
-    Verify Password
-    <input type="password" name="verify"  class="user">
-</label>
-<p th:text="${error}"></p>
+<form method='post' th:action="@{/user}">
+    <div class="form-group">
+        <label>UserName
+            <input type="text" name="userName" class="user" th:value="${user.userName}">
 
-<input type = 'submit' value = 'Join now!'>
+        </label>
+        <p class="error" th:errors="${user.userName}"></p>
+    </div>
+    <div class="form-group">
+        <label>
+            Email
+            <input name="email" class="user" th:value="${user.email}">
+        </label>
+        <p class="error" th:errors="${user.email}"></p>
+    </div>
+    <div class="form-group">
+        <label>
+            Password
+            <input type="password" name="password" class="user" th:value="${user.password}">
+        </label>
+        <p class="error" th:errors="${user.password}"></p>
+    </div>
+    <div class="form-group">
+        <label>
+            Verify Password
+            <input type="password" name="verify" class="user">
+        </label>
+        <p class="error" th:text="${passwordError}"/>
+    </div>
+
+    <input type='submit' value='Join now!'>
 </form>
 </body>
 </html>
